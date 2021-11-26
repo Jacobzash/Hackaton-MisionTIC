@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "dZiCKcjzUvkwl0NEsF4qam/2aT9lZoia34/KsBGgMmhcFjzjUs1V49V70eTBRAr+6ig71I1lm1iHbZkD44+h2Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\JAROD\\JACOBZASH Dropbox\\JAROD ALEXANDER HINCAPIE\\Mi PC (LAPTOP-TC2C9KPA)\\Desktop\\MISION TIC\\HACKATON\\E-Migrant\\E-Migrant.App\\E-Migrant.App.Servicios\\E-Migrant.App.Servicios.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\JAROD\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\JAROD\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\JAROD\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\JAROD\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\JAROD\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\JAROD\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
