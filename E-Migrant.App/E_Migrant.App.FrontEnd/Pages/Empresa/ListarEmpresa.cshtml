@@ -1,0 +1,49 @@
+﻿@page
+@model E_Migrant.App.FrontEnd.ListarEmpresaModel
+@{
+}
+
+<div class = "center">
+<h3>Listar Empresa</h3>
+<p>En está página podrá visualizar su registro de empresa</p>
+
+
+<table class="table table-dark">
+  <thead class="thead-dark">
+    <tr>
+        <th scope="col">Razon_Social</th>
+      <th scope="col">Nit</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Email</th>
+      <th scope="col">Pagina Web</th>
+      <th scope="col">Sector</th>
+      <th scope="col">Tipo Servicios</th>
+      
+      
+    </tr>
+  </thead>
+@foreach(var empresa in Model.empresas){
+    <tr>
+        <td>@empresa.Razon_Social</td>
+        <td><b><a style="color:#FFC300" asp-page="./ListarEmpresa" asp-route-id="@empresa.Id">@empresa.Nit</a></b></td>
+        
+        <td>@empresa.Direccion</td>
+        <td>@empresa.Ciudad</td>
+        <td>@empresa.Telefono</td>
+        <td>@empresa.Email</td>
+        <td>@empresa.Pagina_Web</td>
+        <td>@empresa.Sector</td>
+        <td>@empresa.Tipo_Servicios</td>
+        
+       
+        <td>
+            <a class="btn btn-primary table-btn" asp-page="./EditarEmpresa" asp-route-id="@empresa.Id">Editar</a>
+            
+        </td>  
+    </tr>
+}
+</table>
+</div>
+

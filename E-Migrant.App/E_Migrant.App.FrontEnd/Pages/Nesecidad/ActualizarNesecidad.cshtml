@@ -1,0 +1,44 @@
+﻿@page
+@model E_Migrant.App.FrontEnd.ActualizarNesecidadModel
+@using E_Migrant.App.Dominio
+@{
+}
+<div class = "center">
+<h3>Cargar Nesecidad</h3>
+<form method="post" >
+    <div class="form-row">
+
+        <input asp-for="nesecidad.Id" class="form-control"  type="hidden" required >
+
+	<div class="form-group col-md-6">
+        <label asp-for="nesecidad.Categoria_Nesecidades" class="col-sm-2">Categoria_Nesecidades</label>
+        <select asp-for="nesecidad.Categoria_Nesecidades" class="form-control" asp-items="Html.GetEnumSelectList<Categoria_Nesecidades>()"></select> 
+        <span class="text-danger" asp-validation-for="nesecidad.Categoria_Nesecidades"></span>      
+	</div>
+
+	<div class="form-group col-md-6">
+        <label asp-for="nesecidad.Descripcion" class="col-sm-2">Descripcion</label>
+        <input asp-for="nesecidad.Descripcion" class="form-control" placeholder="Descripcion"  required>        
+    </div>	   
+    
+    <div class="form-group col-md-6">
+        <label asp-for="nesecidad.NivelP" class="col-sm-2">NivelP</label>
+        <select asp-for="nesecidad.NivelP" class="form-control" asp-items="Html.GetEnumSelectList<NivelP>()"></select> 
+        <span class="text-danger" asp-validation-for="nesecidad.NivelP"></span>      
+	</div>
+	
+
+	
+
+	<div class="form-group col-md-6">
+        <label asp-for="Id" class="col-sm-2">Migrante</label>
+        <select asp-for="Id" class="form-control" asp-items="Model.migrantes"></select>
+    </div>
+	</div>
+
+    <div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a asp-page="./ListarNesecidades" class="btn btn-primary">Cancelar</a>
+    </div>
+</form>
+</div>

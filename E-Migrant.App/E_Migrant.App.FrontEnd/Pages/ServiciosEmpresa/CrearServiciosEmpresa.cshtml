@@ -1,0 +1,58 @@
+﻿@page
+@model E_Migrant.App.FrontEnd.CrearServiciosServiciosEmpresaModel
+@using E_Migrant.App.Dominio
+@{
+}
+<div class="center">
+    <h3>Crear Servicios</h3>
+    <form method="post">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="ServiciosEmpresa.NombreServicio" class="col-sm-2">Nombre de Servicio</label>
+                <input asp-for="ServiciosEmpresa.NombreServicio" class="form-control" placeholder="Nombre de Servicio" value="" required>
+                <span class="text-danger" asp-validation-for="ServiciosEmpresa.NombreServicio"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="ServiciosEmpresa.MaxMigrantes" class="col-sm-2">Maximo de Migrantes</label>
+                <input asp-for="ServiciosEmpresa.MaxMigrantes" class="form-control" placeholder="Maximo de Migrantes" value=""
+                    required>
+                <span class="text-danger" asp-validation-for="ServiciosEmpresa.MaxMigrantes"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="migrante.FechaInicioOferta" class="col-sm-2">Fecha.Inicio.Oferta</label>
+                <input asp-for="migrante.FechaInicioOferta" class="form-control" placeholder="Date" value="" required>
+                <span class="text-danger" asp-validation-for="migrante.FechaInicioOferta"></span>
+            </div>
+
+
+            <div class="form-group col-md-6">
+                <label asp-for="migrante.FechaFinalizacionOferta" class="col-sm-2">Fecha.Finalización.Oferta</label>
+                <input asp-for="migrante.FechaFinalizacionOferta" class="form-control" placeholder="Date" value="" required>
+                <span class="text-danger" asp-validation-for="migrante.FechaFinalizacionOferta"></span>
+            </div>
+
+           
+             <div class="form-group col-md-6">
+                <label asp-for="ServiciosEmpresa.EstadoServicio" class="col-sm-2">Estado.Servicio</label>
+                <select asp-for="ServiciosEmpresa.EstadoServicio" class="form-control"
+                    asp-items="Html.GetEnumSelectList<EstadoServicio>()"></select>
+                <span class="text-danger" asp-validation-for="ServiciosEmpresa.EstadoServicio"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="ServiciosEmpresa.CategoriasNecesidades" class="col-sm-2">CategoriasNecesidades</label>
+                <select asp-for="ServiciosEmpresa.CategoriasNecesidades" class="form-control"
+                    asp-items="Html.GetEnumSelectList<CategoriasNecesidades>()"></select>
+                <span class="text-danger" asp-validation-for="ServiciosEmpresa.CategoriasNecesidades"></span>
+            </div>
+            <br>
+            
+
+
+            <div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a asp-page="./ListarServiciosEmpresa" class="btn btn-primary">Cancelar</a>
+            </div>
+    </form>
+</div>

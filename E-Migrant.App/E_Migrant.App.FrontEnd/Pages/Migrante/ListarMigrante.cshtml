@@ -1,0 +1,48 @@
+﻿@page
+@model E_Migrant.App.FrontEnd.ListarMigranteModel
+@{
+}
+<div class = "center">
+<h3>Listar Migrante</h3>
+<p>En está página podrá visualizar su registro de migrante</p>
+<div class="form-group row" style="text-align: left:10%" id="detail"><a class="btn btn-primary table-btn" asp-page="./CrearCliente">Agregar Migrante</a></div>
+
+<table class="table table-dark">
+  <thead class="thead-dark">
+    <tr>
+        <th scope="col">Tipo_Documento</th>
+      <th scope="col">Numero_Documento</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Fecha de Nacimiento</th>
+      <th scope="col">Email</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Pais</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Situacion_Laboral</th>
+      
+    </tr>
+  </thead>
+@foreach(var migrante in Model.migrantes){
+    <tr>
+        <td>@migrante.Tipo_Documento</td>
+        <td><b><a style="color:#FFC300" asp-page="./ListarMigrante" asp-route-id="@migrante.Id">@migrante.Numero_Documento</a></b></td>
+        <td>@migrante.Nombre</td>
+        <td>@migrante.Apellidos</td>
+        <td>@migrante.Fecha_nacimiento</td>
+        <td>@migrante.Email</td>
+        <td>@migrante.Telefono</td>
+        <td>@migrante.Direccion</td>
+        <td>@migrante.Pais</td>
+        <td>@migrante.Ciudad</td>
+        <td>@migrante.Situacion_Laboral</td>
+       
+        <td>
+            <a class="btn btn-primary table-btn" asp-page="./EditarMigrante" asp-route-id="@migrante.Id">Editar</a>
+            
+        </td>  
+    </tr>
+}
+</table>
+</div>

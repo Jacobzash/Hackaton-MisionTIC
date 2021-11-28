@@ -1,0 +1,87 @@
+﻿@page
+@model E_Migrant.App.FrontEnd.EditarEmpresaModel
+@using E_Migrant.App.Dominio;
+@{
+}
+
+<div class="center">
+    <h3>Editar Empresa</h3>
+    <form method="post">
+        <div class="form-row">
+
+            <div class="form-group row">
+
+                <input asp-for="empresa.Id" class="form-control" type="hidden" required>
+
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="empresa.Razon_Social" class="col-sm-2">Razon_Social</label>
+                <input asp-for="empresa.Razon_Social" class="form-control" placeholder="Razon_Social"  required>
+                <span class="text-danger" asp-validation-for="empresa.Razon_Social"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="empresa.Nit" class="col-sm-2">Nit</label>
+                <input asp-for="empresa.Nit" class="form-control" placeholder="Nit" 
+                    required>
+                <span class="text-danger" asp-validation-for="empresa.Nit"></span>
+            </div>
+
+
+            <div class="form-group col-md-6">
+                <label asp-for="empresa.Direccion" class="col-sm-2">Direccion</label>
+                <input asp-for="empresa.Direccion" class="form-control" placeholder="Direccion" 
+                    required>
+                <span class="text-danger" asp-validation-for="empresa.Direccion"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="empresa.Ciudad" class="col-sm-2">Ciudad</label>
+                <input asp-for="empresa.Ciudad" class="form-control" placeholder="Ciudad" 
+                    required>
+                <span class="text-danger" asp-validation-for="empresa.Ciudad"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="empresa.Telefono" class="col-sm-2">Telefono</label>
+                <input asp-for="empresa.Telefono" class="form-control" placeholder="Telefono"  required>
+                <span class="text-danger" asp-validation-for="empresa.Telefono"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="empresa.Email" class="col-sm-2">Email</label>
+                <input asp-for="empresa.Email" class="form-control" placeholder="Email" >
+
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="empresa.Pagina_Web" class="col-sm-2">Pagina_Web</label>
+                <input asp-for="empresa.Pagina_Web" class="form-control" placeholder="Pagina_Web" >
+
+            </div>
+
+
+             <div class="form-group col-md-6">
+                <label asp-for="empresa.Sector" class="col-sm-2">Sector</label>
+                <select asp-for="empresa.Sector" class="form-control"
+                    asp-items="Html.GetEnumSelectList<Sector>()"></select>
+                <span class="text-danger" asp-validation-for="empresa.Sector"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="empresa.Tipo_Servicios" class="col-sm-2">Tipo_Servicios</label>
+                <select asp-for="empresa.Tipo_Servicios" class="form-control"
+                    asp-items="Html.GetEnumSelectList<Tipo_Servicios>()"></select>
+                <span class="text-danger" asp-validation-for="empresa.Tipo_Servicios"></span>
+            </div>
+            <br>
+            
+
+
+            <div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a asp-page="./ListarEmpresa" class="btn btn-primary">Cancelar</a>
+            </div>
+    </form>
+</div>
+

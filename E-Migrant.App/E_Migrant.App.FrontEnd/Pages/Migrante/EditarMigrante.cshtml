@@ -1,0 +1,91 @@
+﻿@page
+@model E_Migrant.App.FrontEnd.EditarMigranteModel
+@using E_Migrant.App.Dominio;
+@{
+}
+<div class="center">
+    <h3>Editar Migrante</h3>
+    <form method="post">
+        <div class="form-row">
+
+            <div class="form-group row">
+
+                <input asp-for="migrante.Id" class="form-control" type="hidden" required>
+
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="migrante.Nombre" class="col-sm-2">Nombre</label>
+                <input asp-for="migrante.Nombre" class="form-control" placeholder="Nombre" required>
+                <span class="text-danger" asp-validation-for="migrante.Nombre"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="migrante.Apellidos" class="col-sm-2">Apellidos</label>
+                <input asp-for="migrante.Apellidos" class="form-control" placeholder="Apellidos" required>
+                <span class="text-danger" asp-validation-for="migrante.Apellidos"></span>
+            </div>
+
+
+            <div class="form-group col-md-6">
+                <label asp-for="migrante.Numero_Documento" class="col-sm-2">Numero de Documento</label>
+                <input asp-for="migrante.Numero_Documento" class="form-control" placeholder="Numero Documento" required>
+                <span class="text-danger" asp-validation-for="migrante.Numero_Documento"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="migrante.Tipo_Documento" class="col-sm-2">Tipo Documento</label>
+                <select asp-for="migrante.Tipo_Documento" class="form-control"
+                    asp-items="Html.GetEnumSelectList<Tipo_Documento>()"></select>
+                <span class="text-danger" asp-validation-for="migrante.Tipo_Documento"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="migrante.Pais" class="col-sm-2">Pais</label>
+                <select asp-for="migrante.Pais" class="form-control"
+                    asp-items="Html.GetEnumSelectList<Pais>()"></select>
+                <span class="text-danger" asp-validation-for="migrante.Pais"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="migrante.Fecha_nacimiento" class="col-sm-2">Fecha.Nacimiento</label>
+                <input asp-for="migrante.Fecha_nacimiento" class="form-control" placeholder="Date" required>
+                <span class="text-danger" asp-validation-for="migrante.Fecha_nacimiento"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="migrante.Email" class="col-sm-2">Email</label>
+                <input asp-for="migrante.Email" class="form-control" placeholder="Email">
+
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="migrante.Telefono" class="col-sm-2">Telefono</label>
+                <input asp-for="migrante.Telefono" class="form-control" placeholder="Telefono">
+
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="migrante.Direccion" class="col-sm-2">Direccion</label>
+                <input asp-for="migrante.Direccion" class="form-control" placeholder="Direccion">
+
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="migrante.Ciudad" class="col-sm-2">Ciudad</label>
+                <input asp-for="migrante.Ciudad" class="form-control" placeholder="Ciudad">
+
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="migrante.Situacion_Laboral" class="col-sm-2">Situacion_Laboral</label>
+                <select asp-for="migrante.Situacion_Laboral" class="form-control"
+                    asp-items="Html.GetEnumSelectList<Situacion_Laboral>()"></select>
+                <span class="text-danger" asp-validation-for="migrante.Situacion_Laboral"></span>
+            </div>
+            <br>
+
+
+
+            <div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a asp-page="./ListarMigrante" class="btn btn-primary">Cancelar</a>
+            </div>
+    </form>
+</div>
