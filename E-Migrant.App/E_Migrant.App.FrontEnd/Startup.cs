@@ -30,7 +30,7 @@ namespace E_Migrant.App.FrontEnd
                     options.Conventions.AuthorizeFolder("/Empresa");
                     options.Conventions.AuthorizePage("/Index");
                     options.Conventions.AuthorizeFolder("/Nesecidad");
-                    options.Conventions.AuthorizeFolder("/ServiciosEmpresa");
+                    options.Conventions.AuthorizeFolder("/Servicio");
                     }
             );
             Persistencia.AppContext _contexto = new Persistencia.AppContext();
@@ -38,8 +38,7 @@ namespace E_Migrant.App.FrontEnd
             services.AddSingleton<IRepositorioEmpresa>(new RepositorioEmpresa(_contexto));
             services.AddSingleton<IRepositorioAmigo>(new RepositorioAmigo(_contexto));
             services.AddSingleton<IRepositorioNesecidad>(new RepositorioNesecidad(_contexto));
-            services.AddSingleton<IRepositorioServiciosEmpresa>(new RepositorioServiciosEmpresa(_contexto));
-            
+            services.AddSingleton<IRepositorioServicio>(new RepositorioServicio(_contexto));
            
             services.AddControllersWithViews();
         }

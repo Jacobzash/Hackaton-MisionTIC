@@ -1,0 +1,40 @@
+﻿@page
+@model E_Migrant.App.FrontEnd.ListarServicioModel
+@using E_Migrant.App.Dominio
+@{
+}
+<div class = "center">
+<h3>Servicios</h3>
+<P>En esta pagina podras Gestionar los Servicios</P>
+
+
+	<table class="table table-dark" >
+	  <thead class="thead-dark">
+		<tr>
+		  <th scope="col">Nombre</th>
+		  <th scope="col">Cupo</th>
+		  <th scope="col">Fecha de Inicio</th>
+		  <th scope="col">Fecha Finalizacion</th>
+		  <th scope="col">Estado del Sevicio</th>
+          <th scope="col">Categoria Nesecidade</th>
+		  <th scope="col">Empresa</th>
+		 
+
+		</tr>
+	  </thead>
+		@foreach(var servicio in Model.servicios) {
+		<tr>
+			<td><b><a style="color:#FFC300" asp-page="./ListarServicio" asp-route-id="@servicio.Id">@servicio.Nombre_Servicio</a></b></td>
+				
+			<td>@servicio.Max_Migrante</td>
+			<td>@servicio.Fecha_InicioOfer</td>
+			<td>@servicio.Fecha_FinalOfer</td>
+			<td>@servicio.EstadoServicio</td>
+            <td>@servicio.Categoria_Nesecidades</td>
+			<td>@servicio.Empresa.Razon_Social</td>
+			<td><a class="btn btn-primary table-btn" asp-page="./ActualizarServicio" asp-route-id="@servicio.Id">Editar</a></td>
+			  
+		</tr>
+	}
+	</table>
+</div>

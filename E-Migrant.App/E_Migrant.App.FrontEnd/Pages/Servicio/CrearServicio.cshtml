@@ -1,0 +1,79 @@
+﻿@page
+@model E_Migrant.App.FrontEnd.CrearServicioModel
+@using E_Migrant.App.Dominio
+@{
+}
+<div class = "center">
+<h3>Cargar Servico a Nesecidad</h3>
+<form method="post" >
+    <div class="form-row">
+	
+        <div class="form-group col-md-6">
+            <label asp-for="servicio.Nombre_Servicio" class="col-sm-2">Nombre_Servicio</label>
+            <input asp-for="servicio.Nombre_Servicio" class="form-control" placeholder="Nombre_Servicio" value="" required>        
+        </div>
+
+        <div class="form-group col-md-6">
+            <label asp-for="servicio.Max_Migrante" class="col-sm-2">Cupos</label>
+            <input asp-for="servicio.Max_Migrante" class="form-control" placeholder="Max_Migrante" value="" required>        
+        </div>
+
+        <div class="form-group col-md-6">
+                    <label asp-for="servicio.Fecha_InicioOfer" class="col-sm-2">Fecha Inicio</label>
+                    <input asp-for="servicio.Fecha_InicioOfer" class="form-control" placeholder="Date" value="" required>
+                    <span class="text-danger" asp-validation-for="servicio.Fecha_InicioOfer"></span>
+        </div>
+
+        <div class="form-group col-md-6">
+                    <label asp-for="servicio.Fecha_FinalOfer" class="col-sm-2">Fecha Fin</label>
+                    <input asp-for="servicio.Fecha_FinalOfer" class="form-control" placeholder="Date" value="" required>
+                    <span class="text-danger" asp-validation-for="servicio.Fecha_FinalOfer"></span>
+        </div>	   
+        
+        <div class="form-group col-md-6">
+            <label asp-for="servicio.EstadoServicio" class="col-sm-2">Estado</label>
+            <select asp-for="servicio.EstadoServicio" class="form-control" asp-items="Html.GetEnumSelectList<EstadoServicio>()"></select> 
+            <span class="text-danger" asp-validation-for="servicio.EstadoServicio"></span>      
+        </div>
+
+        <div class="form-group col-md-6">
+            <label asp-for="servicio.Categoria_Nesecidades" class="col-sm-2">Categoria</label>
+            <select asp-for="servicio.Categoria_Nesecidades" class="form-control" asp-items="Html.GetEnumSelectList<Categoria_Nesecidades>()"></select> 
+            <span class="text-danger" asp-validation-for="servicio.Categoria_Nesecidades"></span>      
+        </div>
+            
+
+        
+        <div class="form-group col-md-6">
+             <label asp-for="Id" class="col-sm-2">Empresa</label>
+            <select asp-for="Id" class="form-control" asp-items="Model.empresas"></select>
+        </div>
+                
+        <div class="form-group col-md-6">
+
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input asp-for="servicio.Habilitar" type="radio" class="btn-check" name="btnradio" 
+                id="btnradio1" autocomplete="off" checked 
+                placeholder="Nombre_Servicio" value="" required>
+            <label asp-for="servicio.Habilitar" class="btn btn-outline-primary" for="btnradio1">Enabled</label>
+
+            <input asp-for="servicio.Habilitar" type="radio" class="btn-check" name="btnradio" 
+                id="btnradio2" autocomplete="off"
+                placeholder="Nombre_Servicio" value="" required>
+            <label asp-for="servicio.Habilitar" class="btn btn-outline-primary" for="btnradio2">Disabled</label>
+
+            </div>
+
+        </div>
+
+
+        
+	    </div>
+	
+    <div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a asp-page="./ListarServicio" class="btn btn-primary">Cancelar</a>
+    </div>
+</form>
+</div>
+

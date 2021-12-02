@@ -11,7 +11,7 @@ namespace E_Migrant.App.FrontEnd
 {
     public class EditarMigranteModel : PageModel
     {
-private readonly IRepositorioMigrante repositorioMigrante;
+        private readonly IRepositorioMigrante repositorioMigrante;
         public Migrante migrante { get; set; }
         public EditarMigranteModel(IRepositorioMigrante repositorioMigrante)
         {
